@@ -1,0 +1,9 @@
+#MSearchResultsWindow{
+	position: unset;
+}
+#MSearchResultsWindow iframe{
+width: 100%;
+}
+.contents{
+	overflow-y: auto;
+}
