@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen $doxygenversion"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--BEGIN PROJECT_NAME--><title>$projectname: $title</title><!--END PROJECT_NAME-->
 <!--BEGIN !PROJECT_NAME--><title>$title</title><!--END !PROJECT_NAME-->
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
@@ -14,13 +15,16 @@ $treeview
 $search
 $mathjax
 <link href="$stylesheet" rel="stylesheet" type="text/css" />
+<link href="custom.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="w3.css"> 
 </head>
 <body>
+<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 
 <!--BEGIN TITLEAREA-->
-<div id="titlearea">
-<table align="center" frame="void" width="98%" cellpadding="2%">
+<div id="titlearea" style="display:flex;box-sizing: border-box !important;">
+<!--<table align="center" frame="void" width="98%" cellpadding="2%">
 <tbody>
 <tr style="height: 30px;">
 <td valign="center"> &nbsp; <img src="pigeon.png" width="120"/></td>
@@ -29,37 +33,18 @@ $mathjax
 </tr>
 </tbody>
 </table>
-<!--
-<table cellspacing="0" cellpadding="0">
- <tbody>
- <tr style="height: 56px;">
-  <!--BEGIN PROJECT_LOGO-->
-  <td id="projectlogo"><img alt="Logo" src="$relpath^$projectlogo"/></td>
-  <!--END PROJECT_LOGO-->
-  <!--BEGIN PROJECT_NAME-->
-  <td style="padding-left: 0.5em;">
-   <div id="projectname">$projectname
-   <!--BEGIN PROJECT_NUMBER-->&#160;<span id="projectnumber">$projectnumber</span><!--END PROJECT_NUMBER-->
-   </div>
-   <!--BEGIN PROJECT_BRIEF--><div id="projectbrief">$projectbrief</div><!--END PROJECT_BRIEF-->
-  </td>
-  <!--END PROJECT_NAME-->
-  <!--BEGIN !PROJECT_NAME-->
-   <!--BEGIN PROJECT_BRIEF-->
-    <td style="padding-left: 0.5em;">
-    <div id="projectbrief">$projectbrief</div>
-    </td>
-   <!--END PROJECT_BRIEF-->
-  <!--END !PROJECT_NAME-->
-  <!--BEGIN DISABLE_INDEX-->
-   <!--BEGIN SEARCHENGINE-->
-   <td>$searchbox</td>
-   <!--END SEARCHENGINE-->
-  <!--END DISABLE_INDEX-->
- </tr>
- </tbody>
-</table>
 -->
+<button class="side-nav-btn w3-button w3-xlarge mobile-only" onclick="w3_open()">☰</button>
+<div class="pigeon-logo" style="margin-top:auto;margin-bottom:auto;padding-left:0.5em;">
+<img src="pigeon.png" style="width:100%;max-width:120px; height: auto">
+</div>
+<div class="plumed-logo" style="margin-top:auto;margin-bottom:auto;">
+<a href="http://www.plumed.org"> <img src="logo.png" style="width:100%;max-width:400px;height:auto;" /></a>
+</div>
+<div class="doc-logo" style="padding-right: 1.5em;margin-top:auto;margin-bottom:auto;">
+<a href="../../developer-doc/html/index.html"> <img src="user-logo.png" style="width:100%;max-width:180px;height:auto;float:right;" /></a>
+</div>
+<button class="main-nav-btn w3-button w3-xlarge mobile-only" onclick="w3_open2()">☰</button>
 </div>
 <!--END TITLEAREA-->
 <!-- end header part -->
