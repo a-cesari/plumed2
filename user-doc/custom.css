@@ -46,11 +46,12 @@ width: 100%;
 	.doc-logo{
 		width: 30%;
 	}
-	.side-bar-logo{
+	#side-bar-logo{
+		display: flex !important;
 		justify-content: center;
 		background: white;
 	}
-	.side-bar-logo >img{
+	#side-bar-logo >img{
 		width: auto;
 		height: 70px;
 	}
