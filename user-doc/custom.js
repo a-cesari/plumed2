@@ -17,7 +17,7 @@ $( document ).ready(function() {
 $("#side-nav").addClass("w3-sidebar w3-bar-block .w3-animate-left-side-nav desktop-only");
 $("#main-nav").addClass("desktop-only");
 $("#main-menu").append("<button onclick=\"w3_close2()\" class=\"w3-button w3-large mobile-only\">Close &times;</button>");
-$("#side-nav").prepend("<button onclick=\"w3_close()\" class=\"w3-bar-item w3-button w3-large mobile-only\">Close &times;</button>");
+//$("#side-nav").prepend("<button onclick=\"w3_close()\" class=\"w3-bar-item w3-button w3-large mobile-only\">Close &times;</button>");
 //$("body").prepend("<button class=\"side-nav-btn w3-button w3-xlarge mobile-only\" onclick=\"w3_open()\">☰</button>");
 //$(".headertitle").after("<button class=\"side-nav-btn w3-button w3-xlarge mobile-only\" onclick=\"w3_open2()\">☰</button>");
 
