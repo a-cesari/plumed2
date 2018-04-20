@@ -11,6 +11,8 @@ function main_menu_trigger(){
     if (panel.style.maxHeight){
       panel.style.maxHeight = null;
 			$("#main-menu").removeClass("is-open");
+			$("#MSearchResultsWindow").hide();
+			$("#MSearchField").val('Search');
     } else {
 			$("#main-menu").addClass("is-open");
       panel.style.maxHeight = panel.scrollHeight + "px";
