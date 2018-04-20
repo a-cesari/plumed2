@@ -20,13 +20,11 @@ width: 100%;
 	#myOverlay.is-active{
 		display: block;
 	}
+	
 	#main-menu{
 		max-height:0;
 		overflow: hidden;
     transition: max-height 0.2s ease-out;
-	}
-	#main-nav > .is-open{
-		height: 100%;
 	}
 	.w3-animate-left-side-nav {
     position: relative;
@@ -95,6 +93,11 @@ width: 100%;
 	}
 	#doc-content{
 		margin-left: 0px !important;
+		overflow: initial;
+	}
+	#nav-path{
+		position: fixed;
+		bottom: 0;
 	}
 
 }
