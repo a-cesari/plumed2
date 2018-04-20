@@ -7,12 +7,27 @@
 #MSearchResultsWindow iframe{
 width: 100%;
 }
+
 .contents{
 	overflow-y: auto;
 }
 @media only screen and (max-width: 767px) {
 
 	/*Mobile devices*/
+	#myOverlay{
+		display: none;
+	}
+	#myOverlay.is-active{
+		display: block;
+	}
+	#main-menu{
+		max-height:0;
+		overflow: hidden;
+    transition: max-height 0.2s ease-out;
+	}
+	#main-nav > .is-open{
+		height: 100%;
+	}
 	.w3-animate-left-side-nav {
     position: relative;
     animation: animateleft 0.4s;
@@ -61,16 +76,16 @@ width: 100%;
 	.ui-resizable .ui-resizable-handle {
     	display: none !important;
 	}
-	.side-nav-open-mobile{
-		display: block !important;
-		z-index: 10000 !important;
-		top: 0 !important;
-		height: 100% !important;
-		width: 65% !important;
+	#side-nav{
+		display:none;
 	}
-
-	.side-nav-open-mobile{
+	#side-nav.is-open{
 		display: block !important;
+    z-index: 10000 !important;
+    top: 0 !important;
+    height: 100% !important;
+    width: 65% !important;
+
 	}
 	.mobile-only{
 		display: block !important;

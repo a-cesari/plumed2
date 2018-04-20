@@ -19,7 +19,7 @@ $mathjax
 <link rel="stylesheet" href="w3.css"> 
 </head>
 <body>
-<div class="w3-overlay w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" id="myOverlay"></div>
+<div class="w3-overlay w3-animate-opacity" onclick="sidenav_close()" style="cursor:pointer" id="myOverlay"></div>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
 
 <!--BEGIN TITLEAREA-->
@@ -34,7 +34,7 @@ $mathjax
 </tbody>
 </table>
 -->
-<button class="side-nav-btn w3-button w3-xlarge mobile-only" onclick="w3_open()">☰</button>
+<button id="side-nav-button" class="side-nav-btn w3-button w3-xlarge mobile-only" onclick="sidenav_open()">☰</button>
 <div class="pigeon-logo" style="margin-top:auto;margin-bottom:auto;padding-left:0.5em;">
 <img src="pigeon.png" style="width:100%;max-width:120px; height: auto">
 </div>
@@ -44,7 +44,7 @@ $mathjax
 <div class="doc-logo" style="padding-right: 1.5em;margin-top:auto;margin-bottom:auto;">
 <a href="../../developer-doc/html/index.html"> <img src="user-logo.png" style="width:100%;max-width:180px;height:auto;float:right;" /></a>
 </div>
-<button class="main-nav-btn w3-button w3-xlarge mobile-only" onclick="w3_open2()">☰</button>
+<button id="main-nav-button" class="main-nav-btn w3-button w3-xlarge mobile-only">☰</button>
 </div>
 <!--END TITLEAREA-->
 <!-- end header part -->
