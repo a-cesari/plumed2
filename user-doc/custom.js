@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 console.log('ready');
 //Add necessary class to the side bar to only show on mobile devices
-$("#side-nav").addClass("w3-sidebar w3-bar-block .w3-animate-left-side-nav desktop-only");
+$("#side-nav").addClass("w3-sidebar w3-bar-block w3-animate-left desktop-only");
 //Add plumed logo
 $("#nav-tree").prepend("<div id=\"side-bar-logo\" class=\"mobile-only\"><img src=\"logo.png\" /></div>");
 
@@ -31,12 +31,16 @@ function sidenav_open() {
     main_menu_close();
 		$("#side-nav").addClass("is-open");
 		$("#myOverlay").addClass("is-active");
+		//Prevent page scrolling when sidenav is open
+		$("#doc-content").css("overflow","auto");
 };
 //Close side bar
 function sidenav_close() {
     //document.getElementById("side-nav").style.display = "none";
     $("#side-nav").removeClass("is-open"); //aggiungere anche che ritorna a larghezza desktop
 		$("#myOverlay").removeClass("is-active");
+		//Let page scroll when sidenav is closed
+		$("#doc-content").css("overflow","initial");
 };
 
 //Trigger main menu open/close when clicking on #main-nav-button
