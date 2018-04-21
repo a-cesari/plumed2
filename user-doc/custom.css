@@ -66,6 +66,7 @@
 	}
 	#side-nav{
 		padding-right:0 !important;
+		overflow: hidden;
 	}
 	#nav-sync{
 		display: none;
@@ -123,12 +124,15 @@
 	}
 	#doc-content{
 		margin-left: 0px !important;
-		overflow: initial;
+		height: auto !important;
+		/*overflow: initial;*/
 	}
-	#nav-path{
+	
+	/*Not needed since doc-content height is set to auto */
+	/*#nav-path{
 		position: fixed;
 		bottom: 0;
-	}
+	}*/
 
 /* On mobile devices let content scroll horizontally*/
 .contents{

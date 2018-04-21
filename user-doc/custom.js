@@ -5,6 +5,13 @@ $("#side-nav").addClass("w3-sidebar w3-bar-block w3-animate-left desktop-only");
 //Add plumed logo
 $("#nav-tree").prepend("<div id=\"side-bar-logo\" class=\"mobile-only\"><img src=\"logo.png\" /></div>");
 
+/*
+$(window).resize(function(){
+	document.getElementById("doc-content").style.removeProperty('height');
+});
+viewport_h=document.documentElement.clientHeight;
+console.log(viewport_h);
+*/
 //Open close the main menu (top one) 
 function main_menu_trigger(){
 		panel=document.getElementById("main-menu");
@@ -32,15 +39,17 @@ function sidenav_open() {
 		$("#side-nav").addClass("is-open");
 		$("#myOverlay").addClass("is-active");
 		//Prevent page scrolling when sidenav is open
-		$("#doc-content").css("overflow","auto");
+		$("body,html").css("overflow","hidden");
+		//document.getElementById("doc-content").style.setProperty( 'height', viewport_h+'px', 'important' );
 };
 //Close side bar
 function sidenav_close() {
     //document.getElementById("side-nav").style.display = "none";
     $("#side-nav").removeClass("is-open"); //aggiungere anche che ritorna a larghezza desktop
 		$("#myOverlay").removeClass("is-active");
-		//Let page scroll when sidenav is closed
-		$("#doc-content").css("overflow","initial");
+		//Let page scroll again when sidenav is closed
+		$("body,html").css("overflow","auto");
+		//document.getElementById("doc-content").style.setProperty( 'height', 'auto', 'important' );
 };
 
 //Trigger main menu open/close when clicking on #main-nav-button
@@ -60,7 +69,13 @@ function is_mobile_dev(){
 		return false;
 	}
 }
+
+/*
+//When setting doc-content overflow:initial to allow page scroll, this is necessary. 
+//Not needed anymore.
+
 //Detect if mobile phones keyboard is active or not
+
 function detect_keyboard(){
 	var _originalSize = $(window).width() + $(window).height()
   $(window).resize(function(){
@@ -75,7 +90,9 @@ function detect_keyboard(){
 		}
   });
 }
+
 if(is_mobile_dev()){ detect_keyboard(); }
+*/
 
 //Scroll to search bar when clicked on it
 $("#MSearchField").click(function(){
