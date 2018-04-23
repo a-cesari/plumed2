@@ -118,6 +118,31 @@ $( document ).ready(function() {
 					$('html, body').animate({ scrollTop: $("#MSearchBox").offset().top }, 'slow');
 					return false;
 				};
-		
+				
+				var clipboard = new ClipboardJS('.copy-btn');
+				clipboard.on('success', function(e) {
+    			console.info('Action:', e.action);
+    			console.info('Text:', e.text);
+    			console.info('Trigger:', e.trigger);
+    			e.clearSelection();
+				});
+
+				clipboard.on('error', function(e) {
+    			console.error('Action:', e.action);
+    			console.error('Trigger:', e.trigger);
+				});
+				if(ClipboardJS.isSupported()){
+					copyId=0;
+					//newSelectBox.setAttribute("id","select-"+_selectIndex++);
+					$("pre.fragment").each(function( index ) {
+  					$(this).attr("id","copy-"+copyId);
+						//$(this).prepend("<p style=\"margin:0; float:right;\"><button type=\"button\" class=\"copy-btn\" data-clipboard-target=\"#copy-"+copyId+"\">Copy!</button></p>");
+						$("<span style=\"display:flex;margin-right:8px;\"><button type=\"button\" style=\"margin-left:auto;\" class=\"copy-btn\" data-clipboard-target=\"#copy-"+copyId+"\">Copy!</button></span>").insertBefore(this);
+						copyId++;
+					});
+				}else{
+					clipboard.destroy();
+				}
+				//initialize plugin
 });
 

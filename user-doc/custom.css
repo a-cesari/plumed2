@@ -223,7 +223,7 @@
     cursor: pointer;
     white-space: nowrap;
 	}
-	button, html [type=button], [type=reset], [type=submit] {
+	/*button, html [type=button], [type=reset], [type=submit] {
     -webkit-appearance: button;
 	}
 	button, select {
@@ -235,7 +235,7 @@
 	button, input, select, textarea {
     font: inherit;
     margin: 0;
-	}
+	}*/
 	.w3-sidebar {
     height: 100%;
     width: 200px;
