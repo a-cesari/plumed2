@@ -183,6 +183,12 @@
 #nav-tree .item > span{
 	order: 1;
 }
+
+/* Formulas will scroll when are too big*/
+ .formulaDsp{
+ 	overflow-x: scroll;
+ }
+
 /* Copied from w3.css */
 	.w3-animate-opacity {
   	animation: opac 0.8s;
