@@ -42,7 +42,8 @@
 	}
 
 	#titlearea{
-		height: auto !important;
+		height: 64px !important;
+		/*max-height: 64px !important;*/
 	}
 	#myOverlay{
 		display: none;
@@ -66,7 +67,6 @@
 	}
 	#side-nav{
 		padding-right:0 !important;
-		overflow: hidden;
 	}
 	#nav-sync{
 		display: none;
@@ -75,21 +75,28 @@
 		height: 100% !important;
 	}
 	.side-nav-btn{
-		width: 12%;
+		/*max-width: 12%;*/
 	}
 	.main-nav-btn{
-		width: 12%;
+		/*width: 12%;*/
 	}
-
 	.pigeon-logo{
-		width: 15%;
+		padding-left: 0 !important;
+		max-width: 65px !important;
 	}
 	.plumed-logo{
+		max-width: 150px !important;
+	}
+	.doc-logo{
+		max-width: 95px !important;
+		padding-right: 0 !important;
+	}
+/*	.plumed-logo{
 		width: 31%;
 	}
 	.doc-logo{
 		width: 30%;
-	}
+	}*/
 	#side-bar-logo{
 		display: flex !important;
 		justify-content: center;
@@ -145,6 +152,37 @@
 	height: auto;
 }
 
+#nav-tree .item:hover{
+	background-color: lightgray;
+}
+#nav-tree .item.selected:hover{
+	background-color: rgb(181, 0, 0);
+}
+
+#nav-tree .selected{
+	background-color: rgb(181, 0, 0);
+}
+#nav-tree .item{
+	height: 56px;
+	align-items: center;
+  display: flex;
+	padding-left:16px;
+}
+
+#nav-tree .item > a{
+	height: 100%;
+	width: 100%;
+	order: 2;
+	margin-left: auto;
+}
+#nav-tree .item > a span{
+	line-height: 56px;
+	float: right;
+	padding-right: 16px;
+} 
+#nav-tree .item > span{
+	order: 1;
+}
 /* Copied from w3.css */
 	.w3-animate-opacity {
   	animation: opac 0.8s;
@@ -224,13 +262,11 @@
 		width: 0;
 	}
 	.pigeon-logo{
-		width: 15%;
+	
 	}
 	.plumed-logo{
-		width: 45%;
 	}
 	.doc-logo{
-		width: 40%;
 	}
 	.mobile-only{
 		display: none !important;
