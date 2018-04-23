@@ -124,6 +124,10 @@ $( document ).ready(function() {
     			console.info('Action:', e.action);
     			console.info('Text:', e.text);
     			console.info('Trigger:', e.trigger);
+					e.trigger.classList.add("tooltipped");
+					e.trigger.classList.add("tooltipped-s");
+					e.trigger.classList.add("tooltipped-no-delay");
+					e.trigger.setAttribute("aria-label","Copied!");
     			e.clearSelection();
 				});
 
