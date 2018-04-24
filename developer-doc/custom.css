@@ -1,9 +1,434 @@
-#MSearchResultsWindow{
-	position: unset;
+.fragment{
+	position: relative;
+	overflow: visible !important;
 }
-#MSearchResultsWindow iframe{
-width: 100%;
+.copy-btn{
+		position: absolute !important;
+	  color: #333;
+    line-height: 20px;
+    display: inline-block;
+    margin-left: auto;
+    cursor: pointer;
+    vertical-align: middle;
+    border-radius: 3px;
+    border: 1px solid #d5d5d5;
+    user-select: none;
+    -webkit-appearance: none;
+		right: 6px;
 }
+code.copy-to-clipboard{
+	display: block;
+	overflow-x: auto;
+	line-height: 20px;
+}
+@media only screen and (max-width: 767px) {
+	/*Mobile devices*/
+	
+/*testing new search bar*/
+	#MSearchBox{
+	display: flex;
+	align-items: center;
+  white-space: initial; 
+  float: initial;
+  margin-top: initial; 
+  right: initial; 
+  width: initial; 
+	height: 24px;
+  z-index: 102;
+}
+#MSearchBox .left {
+    display: initial; 
+    position: initial;
+    left: initial;
+    width: initial;
+    height: initial;
+    background: initial;
+    background-position: initial;
+		width: 90%;
+    order: 1;
+    display: inline-flex;
+    align-items: center;
+
+}
+#MSearchSelect{
+	order: 1;
+	display: initial;
+	position: initial;
+	width: 100%;
+	max-width: 38px;
+	height: auto;
+
+}
+.left #MSearchSelect {
+     left: initial;
+}
+#MSearchField {
+		line-height: 24px !important;
+		padding: .375rem .75rem !important;
+    display:     initial;      
+    position:   initial;    
+    height: initial; 
+    background: initial;
+		background-color: white;
+    border: initial;
+    width: initial;
+    margin-left: initial;
+    outline:initial;
+		order: 2;
+    width: 100% !important;
+    width: initial;
+		font: inherit;
+		border: 1px solid #ced4da !important;
+		border-right: 0px !important;
+		border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+
+}
+#MSearchBox .right {
+		order: 2;
+    width: 36px !important;
+		height: 36px !important;
+    height: initial;
+		padding-left: 0 !important;
+		display: initial; 
+    position: initial; 
+    right:initial;  
+    top:  initial;
+    background: initial;
+    background-position: initial;
+		/* this is for close button */
+		align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    padding-left: 0;
+    background-color: white;
+		border: 1px solid #ced4da !important;
+		border-left: 0px !important;
+		border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+#MSearchBox .right a{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+img#MSearchCloseImg{
+	height: auto;
+  width: 24px;
+}
+#MSearchClose{
+	position: initial;
+	margin:0;
+	font-size: 22px;
+}
+#MSearchSelect{
+	display: none;
+}
+ /* END search bar*/
+
+	body, table, div, p, dl {
+		font-size: 1rem !important;
+	}	
+	* {
+    box-sizing: initial !important;
+	}
+
+	#MSearchResultsWindow{
+		position: unset;
+	}
+	#MSearchResultsWindow iframe{
+		width: 100%;
+	}
+	#MSearchBox{
+		padding: 16px;
+	}
+	/* New header styles to better scale on mobile*/
+	.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-bottom: .5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.2;
+    color: inherit;
+	}
+	.h1, h1 {
+    font-size: 2.5rem !important;
+	}
+	.h2, h2 {
+    font-size: 2rem;
+	}
+	.h3, h3 {
+    font-size: 1.75rem;
+	}
+	.h4, h4 {
+    font-size: 1.5rem;
+	}
+	.h5, h5 {
+    font-size: 1.25rem;
+	}
+	.h6, h6 {
+    font-size: 1rem;
+	}
+
+	#titlearea{
+		height: 64px !important;
+		border-bottom: none;
+		/*max-height: 64px !important;*/
+	}
+	#myOverlay{
+		display: none;
+	}
+	#myOverlay.is-active{
+		display: block;
+	}
+	
+	#main-menu{
+		max-height:0;
+		overflow: hidden;
+    transition: max-height 0.2s ease-out;
+	}
+	#main-nav > ul{
+		background-image: none;
+		background-color: #f1f1f1;
+		overflow: auto;
+	}
+	#main-nav > ul li a{
+		line-height: 24px;
+		padding: 16px;
+	}
+	#main-nav > ul li{
+		float: initial !important;
+	}
+	.sm-dox a:hover{
+		background-image: none;
+		color: black;
+		text-shadow: none;
+		background-repeat:none;
+		background-color: #e0e0e0;
+	}
+	.w3-animate-left-side-nav {
+    position: relative;
+    animation: animateleft 0.4s;
+	}
+	.w3-animate-top-main-nav {
+    position: relative;
+    animation: animatetop 0.6s;
+	}
+	#side-nav{
+		padding-right:0 !important;
+	}
+	#nav-sync{
+		display: none;
+	}
+	#nav-tree{
+		height: 100% !important;
+	}
+	.side-nav-btn{
+		/*max-width: 12%;*/
+	}
+	.main-nav-btn{
+		/*width: 12%;*/
+	}
+	.pigeon-logo{
+		padding-left: 0 !important;
+		max-width: 65px !important;
+		padding-left: 0.5em !important;
+	}
+	.plumed-logo{
+		max-width: 150px !important;
+	}
+	.doc-logo{
+		max-width: 95px !important;
+		padding-right: 0.5em !important;
+	}
+/*	.plumed-logo{
+		width: 31%;
+	}
+	.doc-logo{
+		width: 30%;
+	}*/
+	#side-bar-logo{
+		display: flex !important;
+		justify-content: center;
+		background: white;
+	}
+	#side-bar-logo >img{
+		width: auto;
+		height: 70px;
+	}
+	.header{
+		display: flex !important;
+	}
+	.ui-resizable .ui-resizable-handle {
+    	display: none !important;
+	}
+	#side-nav{
+		display:none;
+	}
+	#side-nav.is-open{
+		display: block !important;
+    z-index: 10000 !important;
+    top: 0 !important;
+    height: 100% !important;
+    width: 65% !important;
+
+	}
+	.mobile-only{
+		display: block !important;
+	}
+	.desktop-only{
+		display: none !important;
+	}
+	#doc-content{
+		margin-left: 0px !important;
+		height: auto !important;
+		/*overflow: initial;*/
+	}
+	
+	/*Not needed since doc-content height is set to auto */
+	/*#nav-path{
+		position: fixed;
+		bottom: 0;
+	}*/
+
+/* On mobile devices let content scroll horizontally*/
 .contents{
 	overflow-y: auto;
 }
+
+/* Make images responsive */
+.image img{
+	max-width: 100%;
+	height: auto;
+}
+
+#nav-tree .item:hover{
+	background-color: lightgray;
+}
+#nav-tree .item.selected:hover{
+	background-color: rgb(181, 0, 0);
+}
+
+#nav-tree .selected{
+	background-color: rgb(181, 0, 0);
+}
+#nav-tree .item{
+	height: 56px;
+	align-items: center;
+  display: flex;
+	padding-left:16px;
+}
+
+#nav-tree .item > a{
+	height: 100%;
+	width: 100%;
+	order: 2;
+	margin-left: auto;
+}
+#nav-tree .item > a span{
+	line-height: 56px;
+	float: right;
+	padding-right: 16px;
+} 
+#nav-tree .item > span{
+	order: 1;
+}
+
+/* Formulas will scroll when are too big*/
+ .formulaDsp{
+ 	overflow-x: scroll;
+ }
+
+/* Copied from w3.css */
+	.w3-animate-opacity {
+  	animation: opac 0.8s;
+	}
+	.w3-overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+	}
+	.w3-xlarge {
+    font-size: 24px!important;
+	}
+	.w3-btn, .w3-button {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	}
+	.w3-btn, .w3-button {
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+	}
+	/*button, html [type=button], [type=reset], [type=submit] {
+    -webkit-appearance: button;
+	}
+	button, select {
+    text-transform: none;
+	}
+	button, input {
+    overflow: visible;
+	}
+	button, input, select, textarea {
+    font: inherit;
+    margin: 0;
+	}*/
+	.w3-sidebar {
+    height: 100%;
+    width: 200px;
+    background-color: #fff;
+    position: fixed!important;
+    z-index: 1;
+    overflow: auto;
+	}
+
+	.w3-animate-left{position:relative;animation:animateleft 0.4s}@keyframes animateleft{from{left:-300px;opacity:0} to{left:0;opacity:1}}
+	/* End w3.css */
+
+}
+
+@media only screen and (min-width: 768px){
+	
+	/*Desktop*/
+
+	.main-nav-btn{
+		width: 0;
+	}
+
+	.side-nav-btn{
+		width: 0;
+	}
+	.pigeon-logo{
+	
+	}
+	.plumed-logo{
+	}
+	.doc-logo{
+	}
+	.mobile-only{
+		display: none !important;
+	}
+
+	.desktop-only{
+		display: block !important;
+	}
+}
+
