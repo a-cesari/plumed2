@@ -8,40 +8,15 @@ $( document ).ready(function() {
 	$(".title").addClass("h1");
 	$("#MSearchClose").prepend("<span class=\"mobile-only\">&times;</span>");
 	$("#MSearchCloseImg").addClass("desktop-only");
-				//Add necessary class to the side bar to only show on mobile devices
-				$("#side-nav").addClass("w3-sidebar w3-bar-block w3-animate-left desktop-only");
-				//Add plumed logo
-				$("#nav-tree").prepend("<div id=\"side-bar-logo\" class=\"mobile-only\"><img src=\"logo.png\" /></div>");
-
-				/*
-				$(window).resize(function(){
-					document.getElementById("doc-content").style.removeProperty('height');
-				});
-				viewport_h=document.documentElement.clientHeight;
-				console.log(viewport_h);
-				*/
-				//Open close the main menu (top one) 
-				function main_menu_trigger(){
-						panel=document.getElementById("main-menu");
-						if (panel.style.maxHeight){
-							panel.style.maxHeight = null;
-							$("#main-menu").removeClass("is-open");
-							$("#MSearchResultsWindow").hide();
-							$("#MSearchField").val('Search');
-						} else {
-							$("#main-menu").addClass("is-open");
-							panel.style.maxHeight = panel.scrollHeight + "px";
-						}
-				};
-				//Close main menu.
-				//If main menu is open when trying to open the left side bar, main menu is closed by calling this function
-				function main_menu_close(){
-						panel=document.getElementById("main-menu");
-						if (panel.style.maxHeight){
-							panel.style.maxHeight = null;
-						} 
-				}
-				//Open sidebar
+	//Add necessary class to the side bar to only show on mobile devices
+	if($("#side-nav").length){
+		$("<div class=\"w3-overlay w3-animate-opacity\" style=\"cursor:pointer\" id=\"myOverlay\"></div>").insertBefore("#top");
+		$("#titlearea").prepend("<button id=\"side-nav-button\" class=\"side-nav-btn w3-button w3-xlarge mobile-only\" style=\"display:none;\">☰</button>");
+		$("#side-nav").addClass("w3-sidebar w3-bar-block w3-animate-left desktop-only");
+		//Add plumed logo
+		$("#nav-tree").prepend("<div id=\"side-bar-logo\" class=\"mobile-only\"><img src=\"logo.png\" /></div>");
+	
+		//Open sidebar
 				function sidenav_open() {
 						main_menu_close();
 						$("#side-nav").addClass("is-open");
@@ -65,15 +40,50 @@ $( document ).ready(function() {
 					alert('click');
 				});
 				
-				//Trigger main menu open/close when clicking on #main-nav-button
-				$( "#main-nav-button" ).click(function() {
-					main_menu_trigger();	
-				});
-
 				//Trigger sidebar open/close
 				$("#side-nav-button").click(function(){ sidenav_open();});
 				$("#myOverlay").click(function(){ sidenav_close();});
 
+	}
+				/*
+				$(window).resize(function(){
+					document.getElementById("doc-content").style.removeProperty('height');
+				});
+				viewport_h=document.documentElement.clientHeight;
+				console.log(viewport_h);
+				*/
+				//Open close the main menu (top one) 
+				if($("#main-menu").length){
+					$("#titlearea").append("<button id=\"main-nav-button\" class=\"main-nav-btn w3-button w3-xlarge mobile-only\" style=\"display:none;\">☰</button>");
+					function main_menu_trigger(){
+						panel=document.getElementById("main-menu");
+						if (panel.style.maxHeight){
+							panel.style.maxHeight = null;
+							$("#main-menu").removeClass("is-open");
+							$("#MSearchResultsWindow").hide();
+							$("#MSearchField").val('Search');
+						} else {
+							$("#main-menu").addClass("is-open");
+							panel.style.maxHeight = panel.scrollHeight + "px";
+						}
+					};
+				
+				//Close main menu.
+				//If main menu is open when trying to open the left side bar, main menu is closed by calling this function
+					function main_menu_close(){
+						panel=document.getElementById("main-menu");
+						if (panel.style.maxHeight){
+							panel.style.maxHeight = null;
+						} 
+					}
+				
+								
+				//Trigger main menu open/close when clicking on #main-nav-button
+				$( "#main-nav-button" ).click(function() {
+					main_menu_trigger();	
+				});
+			}
+				
 				//Function to detect a mobile device
 				function is_mobile_dev(){
 					if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {

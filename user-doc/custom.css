@@ -189,6 +189,7 @@ img#MSearchCloseImg{
 	#main-nav > ul{
 		background-image: none;
 		background-color: #f1f1f1;
+		overflow: auto;
 	}
 	#main-nav > ul li a{
 		line-height: 24px;
@@ -230,13 +231,14 @@ img#MSearchCloseImg{
 	.pigeon-logo{
 		padding-left: 0 !important;
 		max-width: 65px !important;
+		padding-left: 0.5em !important;
 	}
 	.plumed-logo{
 		max-width: 150px !important;
 	}
 	.doc-logo{
 		max-width: 95px !important;
-		padding-right: 0 !important;
+		padding-right: 0.5em !important;
 	}
 /*	.plumed-logo{
 		width: 31%;
