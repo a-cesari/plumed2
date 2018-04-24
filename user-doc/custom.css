@@ -23,6 +23,109 @@ code.copy-to-clipboard{
 }
 @media only screen and (max-width: 767px) {
 	/*Mobile devices*/
+	
+/*testing new search bar*/
+	#MSearchBox{
+	display: flex;
+	align-items: center;
+  white-space: initial; 
+  float: initial;
+  margin-top: initial; 
+  right: initial; 
+  width: initial; 
+	height: 24px;
+  z-index: 102;
+}
+#MSearchBox .left {
+    display: initial; 
+    position: initial;
+    left: initial;
+    width: initial;
+    height: initial;
+    background: initial;
+    background-position: initial;
+		width: 90%;
+    order: 1;
+    display: inline-flex;
+    align-items: center;
+
+}
+#MSearchSelect{
+	order: 1;
+	display: initial;
+	position: initial;
+	width: 100%;
+	max-width: 38px;
+	height: auto;
+
+}
+.left #MSearchSelect {
+     left: initial;
+}
+#MSearchField {
+		line-height: 24px !important;
+		padding: .375rem .75rem !important;
+    display:     initial;      
+    position:   initial;    
+    height: initial; 
+    background: initial;
+		background-color: white;
+    border: initial;
+    width: initial;
+    margin-left: initial;
+    outline:initial;
+		order: 2;
+    width: 100% !important;
+    width: initial;
+		font: inherit;
+		border: 1px solid #ced4da !important;
+		border-right: 0px !important;
+		border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+
+}
+#MSearchBox .right {
+		order: 2;
+    width: 36px !important;
+		height: 36px !important;
+    height: initial;
+		padding-left: 0 !important;
+		display: initial; 
+    position: initial; 
+    right:initial;  
+    top:  initial;
+    background: initial;
+    background-position: initial;
+		/* this is for close button */
+		align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    padding-left: 0;
+    background-color: white;
+		border: 1px solid #ced4da !important;
+		border-left: 0px !important;
+		border-top-right-radius: .25rem;
+    border-bottom-right-radius: .25rem;
+}
+#MSearchBox .right a{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+img#MSearchCloseImg{
+	height: auto;
+  width: 24px;
+}
+#MSearchClose{
+	position: initial;
+	margin:0;
+	font-size: 22px;
+}
+#MSearchSelect{
+	display: none;
+}
+ /* END search bar*/
+
 	body, table, div, p, dl {
 		font-size: 1rem !important;
 	}	
@@ -36,7 +139,9 @@ code.copy-to-clipboard{
 	#MSearchResultsWindow iframe{
 		width: 100%;
 	}
-
+	#MSearchBox{
+		padding: 16px;
+	}
 	/* New header styles to better scale on mobile*/
 	.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     margin-bottom: .5rem;
@@ -66,6 +171,7 @@ code.copy-to-clipboard{
 
 	#titlearea{
 		height: 64px !important;
+		border-bottom: none;
 		/*max-height: 64px !important;*/
 	}
 	#myOverlay{
@@ -79,6 +185,24 @@ code.copy-to-clipboard{
 		max-height:0;
 		overflow: hidden;
     transition: max-height 0.2s ease-out;
+	}
+	#main-nav > ul{
+		background-image: none;
+		background-color: #f1f1f1;
+	}
+	#main-nav > ul li a{
+		line-height: 24px;
+		padding: 16px;
+	}
+	#main-nav > ul li{
+		float: initial !important;
+	}
+	.sm-dox a:hover{
+		background-image: none;
+		color: black;
+		text-shadow: none;
+		background-repeat:none;
+		background-color: #e0e0e0;
 	}
 	.w3-animate-left-side-nav {
     position: relative;
