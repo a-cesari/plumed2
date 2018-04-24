@@ -119,34 +119,64 @@ $( document ).ready(function() {
 					return false;
 				};
 				
+				function showTooltip(elem, msg) {
+    			elem.setAttribute('class', 'copy-btn tooltipped tooltipped-s tooltipped-no-delay');
+    			elem.setAttribute('aria-label', msg);
+				}
+
+			function fallbackMessage(action) {
+				var actionMsg = '';
+				var actionKey = (action === 'cut' ? 'X' : 'C');
+					if (/iPhone|iPad/i.test(navigator.userAgent)) {
+						actionMsg = 'No support :(';
+					} else if (/Mac/i.test(navigator.userAgent)) {
+						actionMsg = 'Press ⌘-' + actionKey + ' to ' + action;
+					} else {
+						actionMsg = 'Press Ctrl-' + actionKey + ' to ' + action;
+					}
+				return actionMsg;
+			}		
 				var clipboard = new ClipboardJS('.copy-btn');
 				clipboard.on('success', function(e) {
-    			console.info('Action:', e.action);
-    			console.info('Text:', e.text);
-    			console.info('Trigger:', e.trigger);
-					e.trigger.classList.add("tooltipped");
-					e.trigger.classList.add("tooltipped-s");
-					e.trigger.classList.add("tooltipped-no-delay");
-					e.trigger.setAttribute("aria-label","Copied!");
+    			//console.info('Action:', e.action);
+    			//console.info('Text:', e.text);
+    			//console.info('Trigger:', e.trigger);
+					//e.trigger.classList.add("tooltipped");
+					//e.trigger.classList.add("tooltipped-s");
+					//e.trigger.classList.add("tooltipped-no-delay");
+					//e.trigger.setAttribute("aria-label","Copied!");
     			e.clearSelection();
+					showTooltip(e.trigger, 'Copied!');
 				});
 
 				clipboard.on('error', function(e) {
-    			console.error('Action:', e.action);
-    			console.error('Trigger:', e.trigger);
+    			//console.error('Action:', e.action);
+    			//console.error('Trigger:', e.trigger);
+					showTooltip(e.trigger, fallbackMessage(e.action));
 				});
 				if(ClipboardJS.isSupported()){
 					copyId=0;
 					//newSelectBox.setAttribute("id","select-"+_selectIndex++);
 					$("pre.fragment").each(function( index ) {
+						$(this).wrapInner("<code class=\"copy-to-clipboard\"></code>");
   					$(this).attr("id","copy-"+copyId);
-						//$(this).prepend("<p style=\"margin:0; float:right;\"><button type=\"button\" class=\"copy-btn\" data-clipboard-target=\"#copy-"+copyId+"\">Copy!</button></p>");
-						$("<span style=\"display:flex;margin-right:8px;\"><button type=\"button\" style=\"margin-left:auto;\" class=\"copy-btn\" data-clipboard-target=\"#copy-"+copyId+"\">Copy!</button></span>").insertBefore(this);
+						$(this).prepend("<button type=\"button\" class=\"copy-btn\" data-clipboard-target=\"#copy-"+copyId+"\"><img class=\"clippy\" width=\"13\" src=\"clippy.svg\" alt=\"Copy to clipboard\"></button>");
+						//$("<span style=\"display:flex;margin-right:8px;\"><button type=\"button\" style=\"margin-left:auto;\" class=\"copy-btn\" data-clipboard-target=\"#copy-"+copyId+"\"><img class=\"clippy\" width=\"13\" src=\"clippy.svg\" alt=\"Copy to clipboard\"></button></span>").insertBefore(this);
 						copyId++;
 					});
 				}else{
 					clipboard.destroy();
 				}
-				//initialize plugin
+
+				var btns = document.querySelectorAll('.copy-btn');
+					for (var i = 0; i < btns.length; i++) {
+    			btns[i].addEventListener('mouseleave', clearTooltip);
+    			btns[i].addEventListener('blur', clearTooltip);
+				}
+				function clearTooltip(e) {
+    			e.currentTarget.setAttribute('class', 'copy-btn');
+    			e.currentTarget.removeAttribute('aria-label');
+				}
+				
 });
 
