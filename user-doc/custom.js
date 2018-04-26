@@ -15,6 +15,7 @@ $( document ).ready(function() {
 		$("#side-nav").addClass("w3-sidebar w3-bar-block w3-animate-left desktop-only");
 		//Add plumed logo
 		$("#nav-tree").prepend("<div id=\"side-bar-logo\" class=\"mobile-only\"><img src=\"logo.png\" /></div>");
+		$("#side-bar-logo").append("<span id=\"close-nav-icon\" class=\"mobile-only\">&times;</span>");
 	
 		//Open sidebar
 				function sidenav_open() {
@@ -35,7 +36,10 @@ $( document ).ready(function() {
 						$("body,html").css("overflow","auto");
 						//document.getElementById("side-nav").style.setProperty( 'height', '100%', 'important' );
 				};
-		
+			
+				$("#close-nav-icon").click(function(){
+        	sidenav_close();
+				});
 				$("#nav-tree li").click(function(){
 					alert('click');
 				});

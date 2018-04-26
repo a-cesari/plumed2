@@ -15,6 +15,11 @@
     user-select: none;
     -webkit-appearance: none;
 		right: 6px;
+		z-index: 2; /* fix for iphone */
+		opacity: 1 !important;
+		background-color: #eee;
+    background-image: linear-gradient(#fcfcfc,#eee);
+
 }
 code.copy-to-clipboard{
 	display: block;
@@ -23,7 +28,54 @@ code.copy-to-clipboard{
 }
 @media only screen and (max-width: 767px) {
 	/*Mobile devices*/
-	
+	#nav-tree .label{
+		font-size: 1rem;
+	}
+	#nav-tree .label a{
+		padding: 0;
+	}
+/*icon test*/
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(icons/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('icons/Material Icons'),
+       local('icons/MaterialIcons-Regular'),
+       url(icons/MaterialIcons-Regular.woff2) format('woff2'),
+       url(icons/MaterialIcons-Regular.woff) format('woff'),
+       url(icons/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+/*  END */
+
+
 /*testing new search bar*/
 	#MSearchBox{
 	display: flex;
@@ -246,8 +298,15 @@ img#MSearchCloseImg{
 	.doc-logo{
 		width: 30%;
 	}*/
+	#close-nav-icon{
+		margin-left: auto;
+		padding-right: 16px;
+		font-size: 2rem;
+		font-weight:800;
+	}
 	#side-bar-logo{
 		display: flex !important;
+		align-items: center;
 		justify-content: center;
 		background: white;
 	}
@@ -266,10 +325,10 @@ img#MSearchCloseImg{
 	}
 	#side-nav.is-open{
 		display: block !important;
-    z-index: 10000 !important;
+    z-index: 2 !important;
     top: 0 !important;
     height: 100% !important;
-    width: 65% !important;
+    width: 100% !important;
 
 	}
 	.mobile-only{
