@@ -274,12 +274,6 @@ img#MSearchCloseImg{
 	}
 	#nav-tree{
 		height: 100% !important;
-		overflow-x: scroll;
-		-webkit-overflow scrolling: touch;
-		white-space: nowrap;
-	}
-	#nav-tree-contents{
-		display: inline;
 	}
 
 	.side-nav-btn{
@@ -383,6 +377,7 @@ img#MSearchCloseImg{
 	align-items: center;
   display: flex;
 	padding-left:16px;
+	overflow-x: scroll;
 }
 
 #nav-tree .item > a{
