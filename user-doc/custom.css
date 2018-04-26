@@ -378,6 +378,9 @@ img#MSearchCloseImg{
   display: flex;
 	padding-left:16px;
 	overflow-x: scroll;
+	white-space: nowrap;
+	-webkit-overflow-scrolling: touch;
+	overflow-y: hidden;
 }
 
 #nav-tree .item > a{
@@ -385,11 +388,13 @@ img#MSearchCloseImg{
 	width: 100%;
 	order: 2;
 	margin-left: auto;
+	display: inline;
 }
 #nav-tree .item > a span{
 	line-height: 56px;
 	float: right;
 	padding-right: 16px;
+	display:inline;
 } 
 #nav-tree .item > span{
 	order: 1;
