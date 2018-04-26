@@ -267,13 +267,21 @@ img#MSearchCloseImg{
 	}
 	#side-nav{
 		padding-right:0 !important;
+		overflow: hidden;
 	}
 	#nav-sync{
 		display: none;
 	}
 	#nav-tree{
 		height: 100% !important;
+		overflow-x: scroll;
+		-webkit-overflow scrolling: touch;
+		white-space: nowrap;
 	}
+	#nav-tree-contents{
+		display: inline;
+	}
+
 	.side-nav-btn{
 		/*max-width: 12%;*/
 	}
